@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
@@ -32,6 +31,7 @@
             <tr>
                 <td style="widht: 150px"><c:out value="${contato.email}"></c:out></td>
                 <td style="widht: 150px"><c:out value="${contato.name}"></c:out></td>
+                <>
             </tr>
         </c:forEach>
         </tbody>

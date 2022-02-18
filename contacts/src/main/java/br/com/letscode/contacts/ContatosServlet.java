@@ -12,7 +12,7 @@ import javax.servlet.annotation.*;
 @WebServlet(value = "/contacts")
 public class ContatosServlet extends HttpServlet {
 
-    @Inject
+
     private ListContact listContactBean;
 
     public void init() {
@@ -27,7 +27,9 @@ public class ContatosServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/list-contacts.jsp");
+        req.setAttribute("contatos", listContactBean.getContacts());
+        dispatcher.forward(req, resp);
     }
 
     public void destroy() {
